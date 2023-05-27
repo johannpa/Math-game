@@ -7,15 +7,19 @@ NB_QUESTIONS = 5
 def poser_question():
     nb1 = random.randint(NB_MIN, NB_MAX)
     nb2 = random.randint(NB_MIN, NB_MAX)
-    operateur = random.randint(0, 1)
+    operateur = random.randint(0, 2)
     operateur_str = "+"
     if operateur == 1:
         operateur_str = "*"
+    else:
+        operateur_str = "-"
     resultat = input(f"Calculez : {nb1} {operateur_str} {nb2} = ")
     resultat_int = int(resultat)
     calcul = nb1 + nb2
     if operateur == 1:
         calcul = nb1 * nb2
+    else:
+        calcul = nb1 - nb2
     if resultat_int == calcul:
         #print("Réponse correcte")
         return True
